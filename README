@@ -3,7 +3,7 @@ My .dotfiles.
 Compton.conf for compton
 (~/.config/compton.conf)
 
-config for i3wm
+i3-config for i3wm
 (~/.config/i3/config)
 
 i3blocks.conf for i3-blocks
