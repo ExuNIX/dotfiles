@@ -1,23 +1,3 @@
-#Antigen Loading
-source ~/git/antigen/antigen.zsh
-
-#Antigen Plugins
-antigen bundle git
-#antigen bundle sudo
-#
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-#antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-#Antigen Options
-antigen use oh-my-zsh
-
-#Antigen Theme
-#antigen theme fino
-antigen theme agnoster_cyan
-
-#Antigen Apply
-antigen apply
 
 # The following lines were added by compinstall
 

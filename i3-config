@@ -161,21 +161,21 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks
 		position top
-		height 25
+		#height 25
 		strip_workspace_numbers yes
 }
 
 #i3 GAPS
-gaps inner 10
-gaps outer 5
+#gaps inner 10
+#gaps outer 5
 
 # TitleBar Color
-client.focused          #111111 #333333 #00BAC7 #00DA8E
-client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e 
-client.urgent           #C10004 #900000 #ffffff #900000
+#client.focused          #111111 #333333 #00BAC7 #00DA8E
+#client.focused_inactive #333333 #5F676A #ffffff #484e50
+#client.unfocused        #333333 #424242 #888888 #292d2e 
+#client.urgent           #C10004 #900000 #ffffff #900000
 
 # exec
 exec xrandr --output Virtual1 --mode 1920x1200
-exec feh --bg-fill ~/images/wallpapers/green-abstract-matrix-system-failure-1920x1080-47548.jpg
-exec compton
+#exec feh --bg-fill ~/images/wallpapers/green-abstract-matrix-system-failure-1920x1080-47548.jpg
+exec compton -f

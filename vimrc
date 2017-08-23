@@ -82,6 +82,7 @@ autocmd FileType javascript setlocal omnifunc
 
 
 " KeyMaps
+nmap <f6> :CtrlP<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :Minimap<CR>
@@ -92,10 +93,6 @@ autocmd VimEnter * NERDTree
 autocmd BufEnter *NERDTreeMirror
 autocmd VimEnter * wincmd w
 autocmd BufWritePost *.py call Flake8()
-
-" Minimap configs
-"autocmd VimEnter * Minimap
-"autocmd BufEnter * Minimap
 
 filetype off
 
@@ -116,20 +113,20 @@ set background=dark
 set statusline+=%#warningmsg#
 set statusline+=%{syntasticStatuslineFlag()}
 set statusline+=%*
-
+" Indentation and line proprieties.
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set cursorline
-"Sets color column for 110 characters limit
+" Sets color column for 110 characters limit
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgrey
 " Sets indentation and folding
 set smartindent
 set autoindent
 set foldenable
-
+" Autocompletion menus
 set completeopt=longest,menuone
 set wildmenu
 set wildmode=longest:list,full
@@ -158,7 +155,6 @@ Plugin 'doronbehar/vim-ncurses-syntax'
 
 "Help and features plugins/
 Plugin 'vim-startify'
-Plugin 'ctrlp.vim'
 Plugin 'EasyMotion'
 Plugin 'surround.vim'
 Plugin 'Raimondi/delimitMate'
@@ -167,6 +163,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Tagbar'
+Plugin 'ctrlp.vim'
 
 " GIT integration.
 Plugin 'tpope/vim-fugitive'
