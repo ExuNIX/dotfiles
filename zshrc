@@ -20,7 +20,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 #Antigen Theme
 #antigen theme agnoster
 #antigen theme fino
-antigen theme jonathan
+antigen theme agnoster
 #Antigen Apply
 antigen apply
 

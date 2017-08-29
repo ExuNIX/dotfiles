@@ -7,7 +7,7 @@ let g:airline_powerline_fonts = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 "let g:syntastic_loc_list_height = 5
 "let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_cpp_compiler_options = "-std=c++14 `pkg-config --cflags --libs gtkmm-3.0` -Wall -Wextra -lncurses -lboost_system -lboost_thread"
@@ -40,14 +40,10 @@ let g:cpp_class_decl_highlight = 1
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc
-
-
 
 " KeyMaps
 nmap <f6> :CtrlP<CR>
@@ -67,6 +63,7 @@ filetype off
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+let path='$HOME/.vim/bundle/'
 
 " set configurations
 set exrc
@@ -159,6 +156,7 @@ Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'vim-tags'
 Plugin 'Yggdroot/indentLine'
 Plugin 'crusoexia/vim-monokai'
+"Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype indent plugin on
