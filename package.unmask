@@ -1,0 +1,7 @@
+=sys-devel/gcc-6.3.0
+# =sys-devel/clang-5.0.0
+# /etc/portage/package.mask:
+# Mask the update of ZSH to the latest version until the conflict with baselayout is resolved.
+
+# required by i3lock (argument)
+=x11-misc/i3lock-9999
