@@ -1,0 +1,35 @@
+ 
+ |---------------------------------------------------------------------------------|
+ |   EEEEEEE  XXXX     XXXX  UUUU   UUUU      OOOOOOOOOO         SSSSSSSSSSSSSSS   |
+ |   EEEEEEE   XXXX   XXXX   UUUU   UUUU     OOOOOOOOOOOO       SSSSSSSSSSSS       |
+ |   EE         XXXX XXXX    UUUU   UUUU    OOOOOO  OOOOOO     SSSSSSSSSS          |
+ |   EEEEEEE      XXXXX      UUUU   UUUU   OOOOOO    OOOOOO   SSSSSSS              |
+ |   EEEEEEE      XXXXX      UUUU   UUUU   OOOOO      OOOOOO SSSSSS                |
+ |   EE         XXXX XXXX    UUUU   UUUU   OOOO        OOOOO  SSSSSSS              |
+ |   EEEEEEE   XXXX   XXXX    UUUUUUUUU    OOOO        OOOOO    SSSSSSSS           |
+ |   EEEEEEE  XXXX     XXXX     UUUUU      OOOO        OOOOO      SSSSSSSS         |
+ |                                         OOOO        OOOOO        SSSSSSSS       |
+ |   NNN      NNN   III   XXXX     XXXX    OOOO        OOOOO          SSSSSSSSSSS  |
+ |   NNNN     NNN   III    XXXX   XXXX     OOOO        OOOOO          SSSSSSSSSS   |
+ |   NNNNN    NNN   III     XXXX XXXX      OOOO        OOOOO        SSSSSSSSSS     |
+ |   NNN NNN  NNN   III       XXXXX        OOOOO      OOOOO      SSSSSSSSSSSS      |
+ |   NNN   NNNNNN   III       XXXXX         OOOOO    OOOOO      SSSSSSSSSSS        |
+ |   NNN    NNNNN   III     XXXX XXXX        OOOOO  OOOOO      SSSSSSSSSS          |
+ |   NNN     NNNN   III    XXXX   XXXXX       OOOOOOOOOO     SSSSSSSSS             |
+ |   NNN      NNN   III   XXXX     XXXXX       OOOOOOOO   SSSSSSSSS                |
+ |---------------------------------------------------------------------------------|
+ |              Source-Based meta-distro made on top Funtoo's Portage              |
+ |---------------------------------------------------------------------------------|
+ |                                ROLLING RELEASE                                  |
+ |                      Stable @system / Bleeding Edge @world                      |
+ |---------------------------------------------------------------------------------|
+                        **************************************
+                        ****             *****            ****
+                        ****             *****            ****
+                        ****** Cognoscetis Veritatem et ******
+                        ******* Veritas Liberabit Vos ********
+                        **********       *****      **********
+                        ************     *****    ************
+                        ************ Exunix(2017) ************
+                        **************************************
+
