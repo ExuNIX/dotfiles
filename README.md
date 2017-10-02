@@ -11,3 +11,5 @@ i3blocks.conf for i3-blocks
 
 vimrc for ViM
 (~/.vimrc)
+
+Remeber to complete this document.
