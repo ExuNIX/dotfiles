@@ -22,11 +22,8 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " Fuzzy-finder Multi-entry selection UI.
 Plug 'junegunn/fzf'
-" NeoMake
-" Plug 'neomake/neomake' 						"Asynchronous Linter
 " Ale
-Plug 'w0rp/ale'
-
+Plug 'w0rp/ale'                                 "Asynchronous Linter Engine
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeTabsToggle' }     "Project dir management
 Plug 'Xuyuanp/nerdtree-git-plugin'                              "Git status in NERDTREE
@@ -70,7 +67,7 @@ Plug 'sickill/vim-monokai'
 call plug#end()
 
 " Set theme and colorscheme
-" hi Normal ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
 colorscheme monokai
 "if filereadable(expand("~/.vimrc_background"))
 "  let base16colorspace=256
@@ -143,7 +140,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
-" Chromatica -------------------------------------------------
+" Chromatica----------------------------------------------------------------------
 let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 let g:chromatica#highlight_feature_level=1
@@ -152,11 +149,12 @@ let g:chromatica#highlight_feature_level=1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path='/usr/lib64/libclang.so.3.9'
 
-
-
+" NeoTex--------------------------------------------------------------------------
+let g:neotex_enabled = 2
 " ----------------------
 "         SETS
 " ----------------------
+set background=dark
 " Set tabs and indents (for go)
 set ts=4
 set shiftwidth=4
@@ -222,19 +220,19 @@ set nowb
 set noswapfile
 
 " Buffesecreen updates to speed up macros etc.
-set lazyredraw background=dark
+"set lazyredraw background=dark
 
 " Set Truecolor support 
 " The "^[" is a single character. You enter it by pressing Ctrl+v and then ESC.
-"set t_8f=^[[38;2;%lu;%lu;%lum
-"set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
+set t_8b=^[[48;2;%lu;%lu;%lum
 " Makes the background transparent. Leave these out if you're not using a transparent
 " terminal.
-highlight Normal ctermbg=grey guibg=NONE
-highlight NonText ctermbg=grey guibg=NONE
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
 " This is what sets vim to use 24-bit colors. It will also work for any version of neovim
 " newer than 0.1.4.
-set termguicolors
+"set termguicolors
 
 " cursor line and column
 set cursorline

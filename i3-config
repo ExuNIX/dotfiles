@@ -174,8 +174,8 @@ bar {
 new_window pixel 0
 
 #i3 GAPS
-gaps inner 10
-gaps outer 7
+gaps inner 17
+gaps outer 4
 
 # TitleBar Color
 client.focused          #111111 #333333 #00BAC7 #00DA8E
@@ -184,5 +184,5 @@ client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
 # exec
-exec feh --bg-fill ~/Images/Wallpaper/technoHed.jpg
-exec compton
+exec feh --bg-fill ~/Images/Wallpaper/blackwallpaper01.jpg
+exec compton -c -f

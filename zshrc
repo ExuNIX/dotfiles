@@ -12,7 +12,7 @@ antigen bundle colored-man-pages
 antigen bundle tmux
 antigen bundle tmuxinator
 
-
+#Antigen external plugins
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
@@ -41,6 +41,6 @@ bindkey -v
 DEFAULT_USER=`whoami`
 
 # BASE16 Colorscheme on 256 color terminal
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
