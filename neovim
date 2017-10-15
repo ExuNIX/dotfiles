@@ -19,7 +19,7 @@ call plug#begin('~/.config/nvim/autoload/')
 " ViM Minimap
 Plug 'severin-lemaignan/vim-minimap'
 " Language-Server for NeoVim
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " Fuzzy-finder Multi-entry selection UI.
 Plug 'junegunn/fzf'
 " Ale
@@ -30,10 +30,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'                              "Git status in N
 Plug 'jistr/vim-nerdtree-tabs'                                  "Fixed single NERDTREE in all tabs
 "Completion integration with nvim-completion-manager.
 "Plug 'roxma/nvim-completion-manager'
-" Plug 'roxma/clang_complete'
-" Completion integration with deoplete.
+Plug 'roxma/clang_complete'
+"Completion integration with deoplete.
+"Plug 'zchee/deoplete-clang'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
 " ViM Obsession
 Plug 'tpope/vim-obsession'
 " ViM Airlinw
@@ -50,29 +50,40 @@ Plug 'ervandew/supertab'
 " C/C++ support with compile, run, idioms, snippets, templates and comments enhancements
 Plug 'vim-scripts/c.vim'
 " NeoTex LaTeX live preview.
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'lervag/vimtex'
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
 
-" Solarized Theme
-"Plug 'altercation/vim-colors-solarized'
 " Monokai theme
-Plug 'sickill/vim-monokai'
-" Base 16 theme
-"Plug 'chriskempson/base16-vim'
-" InkPot theme
-"Plug 'ciaranm/inkpot'
-
+"Plug 'sickill/vim-monokai'
+"Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+call plug#end()
 "--------------------------------------------------------------------------------
 
-call plug#end()
 
 " Set theme and colorscheme
-hi Normal ctermbg=NONE guibg=NONE
-colorscheme monokai
-"if filereadable(expand("~/.vimrc_background"))
-"  let base16colorspace=256
-"  source ~/.vimrc_background
-"endif
+" Set Truecolor support 
+" The "^[" is a single character. You enter it by pressing Ctrl+v and then ESC.
+set t_8f=^[[38;2;%lu;%lu;%lum
+set t_8b=^[[48;2;%lu;%lu;%lum
+" Makes the background transparent. Leave these out if you're not using a transparent
+" terminal.
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+" This is what sets vim to use 24-bit colors. It will also work for any version of neovim
+" newer than 0.1.4.
+set termguicolors
+
+" cursor line and column
+set cursorline
+"autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
+"autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
+
+" set cursorcolumn
+"autocmd InsertEnter * highlight CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+"autocmd InsertLeave * highlight CursorColumn ctermfg=Black ctermbg=Yellow cterm=bold guifg=Black guibg=yellow gui=NONE
+
+colorscheme onedark
 
 " -----------------------------------------------
 " ------------ Plugin Configuration -------------
@@ -80,20 +91,21 @@ colorscheme monokai
 
 " Airline------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#right_sep = ' '
+"let g:airline#extensions#tabline#right_alt_sep = '|'
+"let g:airline_left_sep = ' '
+"let g:airline_left_alt_sep = '|'
+"let g:airline_right_sep = ' '
+"let g:airline_right_alt_sep = '|'
 "let g:airline_theme= 'gruvbox' 
 " CLANG Complete-----------------------------------------------------------------
 " path to directory where library can be found
-let g:clang_library_path='/usr/lib64/libclang.so.3.9'
+"let g:clang_library_path='/usr/lib64/libclang.so.3.9'
 " Integrate with Neomake
 "let g:neomake_cpp_enabled_makers = ['clang']
 "let g:neomake_c_enabled_makers = ['clang']
@@ -116,7 +128,7 @@ let g:ale_completion_enabled = 1
 
 " NERDTree-----------------------------------------------------------------------
 " Opens NERDTree automatically at startup
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTreeTabs
 " Closes NeoViM if NERDTree buffer is the only on left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Default arrows
@@ -129,16 +141,16 @@ map <C-N> :NERDTreeTabsToggle<CR>
 
 " Language-Server for NeoVim-----------------------------------------------------
 " Required for operations modifying multiple buffers like rename.
-set hidden
+"set hidden
 
-let g:LanguageClient_serverCommands = {}
+"let g:LanguageClient_serverCommands = {}
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-set completefunc=LanguageClient#complete
+"let g:LanguageClient_autoStart = 1
+"set completefunc=LanguageClient#complete
 " Keymaps
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " Chromatica----------------------------------------------------------------------
 let g:chromatica#enable_at_startup=1
@@ -147,22 +159,22 @@ let g:chromatica#highlight_feature_level=1
 
 " Deoplete------------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path='/usr/lib64/libclang.so.3.9'
+let g:deoplete#sources#clang#libclang_path='/usr/lib64/libclang.so.5.0'
 
 " NeoTex--------------------------------------------------------------------------
 let g:neotex_enabled = 2
 " ----------------------
 "         SETS
 " ----------------------
+" dark background
 set background=dark
 " Set tabs and indents (for go)
 set ts=4
 set shiftwidth=4
 set ai sw=4
 set smartindent
-
 " Sets wrap column
-set colorcolumn=110
+set colorcolumn=120
 highlight ColorColumn ctermbg=darkgray
 
 " replace tab with spaces
@@ -178,7 +190,7 @@ set number
 
 " Disable line wrapping
 " Toggle set to ';w' in key map section
-set nowrap
+"set nowrap
 
 " enable line and column display
 set ruler
@@ -222,28 +234,8 @@ set noswapfile
 " Buffesecreen updates to speed up macros etc.
 "set lazyredraw background=dark
 
-" Set Truecolor support 
-" The "^[" is a single character. You enter it by pressing Ctrl+v and then ESC.
-set t_8f=^[[38;2;%lu;%lu;%lum
-set t_8b=^[[48;2;%lu;%lu;%lum
-" Makes the background transparent. Leave these out if you're not using a transparent
-" terminal.
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
-" This is what sets vim to use 24-bit colors. It will also work for any version of neovim
-" newer than 0.1.4.
-"set termguicolors
-
-" cursor line and column
-set cursorline
-"autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
-"autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
-
-" set cursorcolumn
-"autocmd InsertEnter * highlight CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
-"autocmd InsertLeave * highlight CursorColumn ctermfg=Black ctermbg=Yellow cterm=bold guifg=Black guibg=yellow gui=NONE
-
 " FileType Detection
+
 
 
 

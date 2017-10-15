@@ -64,7 +64,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 7.0
+  size: 10.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -91,42 +91,36 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Base16 Monokai - alacritty color config
-# Wimer Hazenberg (http://www.monokai.nl)
+# Colors (Gruvbox dark)
+
+#Colors (One Dark)
 colors:
   # Default colors
   primary:
-    background: '0x272822'
-    foreground: '0xf8f8f2'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0xaeaeae'
-    cursor: '0xf8f8f2'
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
 
   # Normal colors
   normal:
-    black:   '0x272822'
-    red:     '0xf92672'
-    green:   '0xa6e22e'
-    yellow:  '0xf4bf75'
-    blue:    '0x66d9ef'
-    magenta: '0xae81ff'
-    cyan:    '0xa1efe4'
-    white:   '0xf8f8f2'
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
 
   # Bright colors
   bright:
-    black:   '0x75715e'
-    red:     '0xfd971f'
-    green:   '0x383830'
-    yellow:  '0x49483e'
-    blue:    '0xa59f85'
-    magenta: '0xf5f4f1'
-    cyan:    '0xcc6633'
-    white: '0xf8f8f2'
-
-# Visual Bell
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xffffff'
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
 # rung, the terminal background will be set to white and transition back to the
@@ -153,7 +147,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.8
+background_opacity: 0.96
 
 # Key bindings
 #
