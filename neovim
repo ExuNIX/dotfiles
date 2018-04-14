@@ -3,7 +3,7 @@
 "|                                      |
 "| Filename: 	init.vim	            |
 "| Author: 	    ExuNIX                  |
-"| Revision: 	21/09/2017              |
+"| Revision: 	11/04/2018              |
 "|                                      |
 "*--------------------------------------*
 "          Veritas Librabit Vos
@@ -52,7 +52,10 @@ Plug 'vim-scripts/c.vim'
 " NeoTex LaTeX live preview.
 Plug 'lervag/vimtex'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
-
+" C++ synatx Highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+"vim-go GoLang Support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Monokai theme
 "Plug 'sickill/vim-monokai'
 "Plug 'morhetz/gruvbox'
@@ -134,7 +137,7 @@ let g:ale_cpp_cpplint_executable = 'cpplint'
 let g:ale_cpp_cpplint_options = ''
 
 " CLang--------------------------------------------------------------------------
-let g:clang_library_path = '/usr/lib64/libclang.so.5.0'
+let g:clang_library_path = '/usr/lib64/libclang.so'
 let g:clang_user_options = '-std=c++14'
 " Minimap------------------------------------------------------------------------
 let g:minimap_highlight= 'Visual'
@@ -182,11 +185,18 @@ let g:chromatica#highlight_feature_level=1
 
 " Deoplete------------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path='/usr/lib64/libclang.so.5.0'
+let g:deoplete#sources#clang#libclang_path='/usr/lib64/libclang.so'
 
 " NeoTex--------------------------------------------------------------------------
 let g:neotex_enabled = 2
-" ----------------------
+" C++ enhanced
+" Highlight-----------------------------------------------------------------------
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+
+"
+"
 "         SETS
 " ----------------------
 " dark background
