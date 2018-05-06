@@ -56,6 +56,8 @@ Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 "vim-go GoLang Support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Jedi Vim
+Plug 'davidhalter/jedi-vim'
 " Monokai theme
 "Plug 'sickill/vim-monokai'
 "Plug 'morhetz/gruvbox'
@@ -194,7 +196,21 @@ let g:neotex_enabled = 2
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+" jedi-vim {
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
 
+let g:jedi#goto_assignments_command = "<leader>pa"
+let g:jedi#goto_definitions_command = "<leader>pd"
+let g:jedi#documentation_command = "<leader>pk"
+let g:jedi#usages_command = "<leader>pu"
+let g:jedi#rename_command = "<leader>pr"
+" }
+"
 "
 "
 "         SETS

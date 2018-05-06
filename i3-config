@@ -187,5 +187,7 @@ client.urgent           #C10004 #900000 #ffffff #900000
 
 # exec
 # exec xrandr --output Virtual1 --mode 1920x1200
-# exec feh --bg-fill ~/Media/Wallpaper/
+exec feh --bg-fill ~/Media/Wallpapers/erhywery.jpg
 exec compton -c -f
+exec sudo xinput set-prop bcm5974 291 1
+exec sudo xinput set-prop bcm5974 299 1
